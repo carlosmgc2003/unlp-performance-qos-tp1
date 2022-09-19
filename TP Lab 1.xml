@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<indexing>
+ <object alt="" name="Imagen3" object_type="graphic"/>
+ <object alt="" name="Imagen5" object_type="graphic"/>
+ <object alt="" name="Objeto1" object_type="ole"/>
+ <object alt="" name="Figura 2 - Simulación del sistema reduciendo progresivamente el tiempo de servicio del router." object_type="graphic"/>
+ <paragraph index="18" node_type="writer">Figura : Simulación del sistema reduciendo progresivamente el tiempo de servicio del router.</paragraph>
+ <paragraph index="21" node_type="writer">Figura : Simulación del sistema incrementando progresivamente el tamaño del buffer del router.</paragraph>
+ <paragraph index="24" node_type="writer">UNLP </paragraph>
+ <paragraph index="25" node_type="writer">Maestría en Redes de Datos</paragraph>
+ <paragraph index="26" node_type="writer">Carlos Alberto Maceira García Coni</paragraph>
+ <object alt="" name="Imagen4" object_type="graphic"/>
+ <object alt="" name="Imagen2" object_type="graphic"/>
+ <paragraph index="41" node_type="writer">Trabajo Práctico 1</paragraph>
+ <paragraph index="42" node_type="writer">Performance y QOS en Redes</paragraph>
+ <paragraph index="43" node_type="writer">Alumno: Carlos Alberto Maceira García Coni</paragraph>
+ <paragraph index="45" node_type="writer">Introducción</paragraph>
+ <paragraph index="46" node_type="writer">El propósito de este trabajo es presentar los conceptos básicos de modelados de simulación, diseño experimental y medición de tráfico de red. Se utilizan un conjunto de datos empíricos de un entrono LAN Ethernet para llevar a cabo una simulación basada en rastreo de un router simple y evaluar algunas compensaciones de rendimiento para la configuración de la red.</paragraph>
+ <paragraph index="47" node_type="writer">Software utilizado</paragraph>
+ <paragraph index="48" node_type="writer">Intérprete de R 4.2.1 con librería “fitdistrplus”.</paragraph>
+ <paragraph index="49" node_type="writer">Simulador de Colas Java Modelling Tools (Módulo JSIMGraph)</paragraph>
+ <paragraph index="50" node_type="writer">Repositorio de código: https://github.com/carlosmgc2003/unlp-performance-qos-tp1</paragraph>
+ <paragraph index="51" node_type="writer">Situación</paragraph>
+ <paragraph index="52" node_type="writer"> De acuerdo al enunciado del archivo “Laboratorio 1: Teoría de Colas” del 17 de agosto de 2022, se realiza el análisis sobre los datos provistos en los archivos CSV. Realizando un histograma permite apreciar la forma que describe la frecuencia de arribos y tiempos de servicio.</paragraph>
+ <paragraph index="55" node_type="writer">Estos histogramas ya dan una idea de las funciones de distribución de probabilidad (FDP) que pueden llegar usarse para modelar arribos y servicios. En este caso elijo la FDP Gamma:</paragraph>
+ <paragraph index="57" node_type="writer">La distribución gamma puede ser parametrizada en términos de dos parámetros. El parámetro forma  α = k y el inverso del parámetro escala  β = 1/θ, llamado proporción. Una variable aleatoria X que esta distribuida bajo una FDP gamma con parámetro forma es α y proporción β es:</paragraph>
+ <paragraph index="60" node_type="writer">Cuya FDP es:</paragraph>
+ <paragraph index="64" node_type="writer">Desarrollo</paragraph>
+ <paragraph index="65" node_type="writer">El simulador JMT permite diseñar, parametrizar y simular sistemas de espera complejos de manera gráfica. Para el presente trabajo se implementó un diseño básico de sistema de espera de la siguiente forma:</paragraph>
+ <paragraph index="67" node_type="writer">Definiciones de la documentación del simulador JMT</paragraph>
+ <paragraph index="68" node_type="writer">Drop Rate (de una estación o de todo el sistema): tasa a la que los clientes son descartados de una estación o una región por la ocurrencia de una restricción (por ejemplo, capacidad máxima de una cola, número máximo de clientes en una región). A nivel del sistema, se refiere a la tasa a la que los clientes se eliminan del sistema.</paragraph>
+ <paragraph index="69" node_type="writer">Throughput (de una estación o de todo el sistema): A nivel de estación se refiere a la tasa a la que los clientes salen de una estación, es decir, el número de solicitudes completadas en una unidad de tiempo. A nivel del sistema se refiere a la tasa a la que los clientes salen del sistema. Estos valores se describen para cada clase de clientes.</paragraph>
+ <paragraph index="70" node_type="writer">Resolución de requerimientos</paragraph>
+ <paragraph index="71" node_type="writer">Para la configuración de enlace de red existente (C = 2 Mbps), realice un gráfico que indique la probabilidad de pérdida de mensajes en función del tamaño del buffer y llamelo Figura 1.</paragraph>
+ <paragraph index="72" node_type="writer">En la figura 1 se observa como se reduce la cantidad de paquetes perdidos a medida que se incremente la capacidad de mensajes del router. La longitud de la cola simulada se extiende desde 10 hasta 25 unidades. A partir de las 26 unidades de incremento de cola el simulador no halla pérdida de paquetes (no puede hallar resultados válidos para el intervalo de error seleccionado).</paragraph>
+ <object index="73" name="Tabla1" object_type="table"/>
+ <paragraph index="75" node_type="writer" parent_index="73">Long Cola</paragraph>
+ <paragraph index="78" node_type="writer" parent_index="73">Samples</paragraph>
+ <paragraph index="81" node_type="writer" parent_index="73">Avg Drop Rate</paragraph>
+ <paragraph index="84" node_type="writer" parent_index="73">Dropped</paragraph>
+ <paragraph index="87" node_type="writer" parent_index="73">‰</paragraph>
+ <paragraph index="90" node_type="writer" parent_index="73">10</paragraph>
+ <paragraph index="93" node_type="writer" parent_index="73">71680</paragraph>
+ <paragraph index="96" node_type="writer" parent_index="73">0,00425</paragraph>
+ <paragraph index="99" node_type="writer" parent_index="73">304,64</paragraph>
+ <paragraph index="102" node_type="writer" parent_index="73">4,25</paragraph>
+ <paragraph index="105" node_type="writer" parent_index="73">11</paragraph>
+ <paragraph index="108" node_type="writer" parent_index="73">143360</paragraph>
+ <paragraph index="111" node_type="writer" parent_index="73">0,00334</paragraph>
+ <paragraph index="114" node_type="writer" parent_index="73">478,8224</paragraph>
+ <paragraph index="117" node_type="writer" parent_index="73">3,34</paragraph>
+ <paragraph index="120" node_type="writer" parent_index="73">12</paragraph>
+ <paragraph index="123" node_type="writer" parent_index="73">102400</paragraph>
+ <paragraph index="126" node_type="writer" parent_index="73">0,00261</paragraph>
+ <paragraph index="129" node_type="writer" parent_index="73">267,264</paragraph>
+ <paragraph index="132" node_type="writer" parent_index="73">2,61</paragraph>
+ <paragraph index="135" node_type="writer" parent_index="73">13</paragraph>
+ <paragraph index="138" node_type="writer" parent_index="73">174080</paragraph>
+ <paragraph index="141" node_type="writer" parent_index="73">0,00202</paragraph>
+ <paragraph index="144" node_type="writer" parent_index="73">351,6416</paragraph>
+ <paragraph index="147" node_type="writer" parent_index="73">2,02</paragraph>
+ <paragraph index="150" node_type="writer" parent_index="73">14</paragraph>
+ <paragraph index="153" node_type="writer" parent_index="73">81920</paragraph>
+ <paragraph index="156" node_type="writer" parent_index="73">0,00162</paragraph>
+ <paragraph index="159" node_type="writer" parent_index="73">132,7104</paragraph>
+ <paragraph index="162" node_type="writer" parent_index="73">1,62</paragraph>
+ <paragraph index="165" node_type="writer" parent_index="73">15</paragraph>
+ <paragraph index="168" node_type="writer" parent_index="73">102400</paragraph>
+ <paragraph index="171" node_type="writer" parent_index="73">0,00125</paragraph>
+ <paragraph index="174" node_type="writer" parent_index="73">128</paragraph>
+ <paragraph index="177" node_type="writer" parent_index="73">1,25</paragraph>
+ <paragraph index="180" node_type="writer" parent_index="73">16</paragraph>
+ <paragraph index="183" node_type="writer" parent_index="73">102400</paragraph>
+ <paragraph index="186" node_type="writer" parent_index="73">0,001</paragraph>
+ <paragraph index="189" node_type="writer" parent_index="73">102,4</paragraph>
+ <paragraph index="192" node_type="writer" parent_index="73">1</paragraph>
+ <paragraph index="195" node_type="writer" parent_index="73">17</paragraph>
+ <paragraph index="198" node_type="writer" parent_index="73">61440</paragraph>
+ <paragraph index="201" node_type="writer" parent_index="73">0,000794</paragraph>
+ <paragraph index="204" node_type="writer" parent_index="73">48,78336</paragraph>
+ <paragraph index="207" node_type="writer" parent_index="73">0,794</paragraph>
+ <paragraph index="210" node_type="writer" parent_index="73">18</paragraph>
+ <paragraph index="213" node_type="writer" parent_index="73">71680</paragraph>
+ <paragraph index="216" node_type="writer" parent_index="73">0,000651</paragraph>
+ <paragraph index="219" node_type="writer" parent_index="73">46,66368</paragraph>
+ <paragraph index="222" node_type="writer" parent_index="73">0,651</paragraph>
+ <paragraph index="225" node_type="writer" parent_index="73">19</paragraph>
+ <paragraph index="228" node_type="writer" parent_index="73">225280</paragraph>
+ <paragraph index="231" node_type="writer" parent_index="73">0,000491</paragraph>
+ <paragraph index="234" node_type="writer" parent_index="73">110,61248</paragraph>
+ <paragraph index="237" node_type="writer" parent_index="73">0,491</paragraph>
+ <paragraph index="240" node_type="writer" parent_index="73">20</paragraph>
+ <paragraph index="243" node_type="writer" parent_index="73">112640</paragraph>
+ <paragraph index="246" node_type="writer" parent_index="73">0,000383</paragraph>
+ <paragraph index="249" node_type="writer" parent_index="73">43,14112</paragraph>
+ <paragraph index="252" node_type="writer" parent_index="73">0,383</paragraph>
+ <paragraph index="255" node_type="writer" parent_index="73">25</paragraph>
+ <paragraph index="258" node_type="writer" parent_index="73">112640</paragraph>
+ <paragraph index="261" node_type="writer" parent_index="73">0,000119</paragraph>
+ <paragraph index="264" node_type="writer" parent_index="73">13,40416</paragraph>
+ <paragraph index="267" node_type="writer" parent_index="73">0,119</paragraph>
+ <paragraph index="273" node_type="writer">Para la configuración de tamaño de buffer existente (B = 10 mensajes), realice un gráfico que indique la probabilidad de pérdida de mensajes en función de la velocidad de enlace y llámelo Figura 2.</paragraph>
+ <paragraph index="274" node_type="writer">La curva que se observa en la figura 2 corresponde a la utilización de la herramienta JMT reduciendo progresivamente el tiempo de servicio en el router. Desde el origen con la distribución ubicada en la media originalmente calculada de los datos y luego reduciendo este parametro en un 50 % realizando sucesivas simulaciones.</paragraph>
+ <paragraph index="275" node_type="writer">Esta reducción en el tiempo de servicio representa un aumento en el ancho de banda de disponible en el equipo de 2 a 3 Mbps ($1000).</paragraph>
+ <paragraph index="278" node_type="writer">Conclusiones</paragraph>
+ <paragraph index="279" node_type="writer">El trabajo me permitió apreciar la importante incidencia que tiene la capacidad de la cola de mensajes en la cantidad de paquetes perdidos en este sistema de espera simple. Cabe destacar que en una red con múltiples equipos de networking los mensajes atraviesan múltiples colas constituyendo, causando que la red tenga una capacidad de almacenamiento propia. Este almacenamiento esta compuesto por todos los datos en tránsito en el sistema para un diferencial de tiempo.</paragraph>
+ <paragraph index="280" node_type="writer">Para el problema propuesto, descartando cambios la FDP de tiempos de arribo de mensajes y trabajando dentro del presupuesto de $2000 pesos asignado por el jefe, la configuración más provechosa será incrementar la capacidad del buffer de 10 a 26 mensajes y el ancho de banda de 2Mbps a 3Mbps por un costo total de $1026.</paragraph>
+ <object name="Forma1" alt="TexMaths" object_type="shape" description="12§display§{\displaystyle X\sim \Gamma (\alpha ,\beta )\equiv \operatorname {Gamma} (\alpha ,\beta )}&#10;§svg§600§FALSE§"/>
+ <object name="Forma2" alt="TexMaths" object_type="shape" description="12§display§{\displaystyle {\begin{aligned}f(x;\alpha ,\beta )&amp;={\frac {x^{\alpha -1}e^{-\beta x}\beta ^{\alpha }}{\Gamma (\alpha )}}\quad {\text{ para }}x&gt;0\quad \alpha ,\beta &gt;0,\\[6pt]\end{aligned}}}§svg§600§FALSE§"/>
+</indexing>

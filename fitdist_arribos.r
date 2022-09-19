@@ -8,7 +8,8 @@ arribos = tiempos_arribo$x / max(tiempos_arribo$x)
 # Graficación de los histogramas
 hist(arribos, plot=TRUE)
 # Obtencion de los parametros para "gamma"
-ans_arribos <- fitdist(arribos, distr = "gamma", method = "mle")
+ans_arribos <- fitdist(arribos, distr = "pois",method = "mme")
+print(ans_arribos)
 plot(ans_arribos, demp = TRUE)
 descdist(arribos, boot = 1000)
 # Mean de arribos
