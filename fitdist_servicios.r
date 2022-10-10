@@ -11,12 +11,14 @@ hist(servicios, plot=TRUE)
 ans_servicios <- fitdist(servicios, distr = "gamma", method = "mle")
 plot(ans_servicios, demp = TRUE)
 descdist(servicios, boot = 1000)
+print(ans_servicios)
 # Mean de servicios
 print(servicios_mean)
 # C
 print(sqrt(var(tiempos_servicio$y))/servicios_mean)
 # shape o factor forma
-print(1/ans_servicios$estimate["shape"])
+#print(1/ans_servicios$estimate["shape"])
 # rate es beta y el software JMT requiere Tita que es igual a 1/beta
-tita <- 1/(ans_servicios$estimate["rate"])
-print(tita)
+#print("Imprimir tita")
+#tita <- 1/(ans_servicios$estimate["rate"])
+#print(tita)
